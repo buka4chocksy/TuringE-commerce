@@ -1,0 +1,29 @@
+{
+  "name": "turingapi",
+  "version": "1.0.0",
+  "description": "E-commerce platform used to make sales",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./bin/www"
+  },
+  "keywords": [
+    "sales"
+  ],
+  "author": "ochoko peter",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.6.5",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.1",
+    "normalize-port": "^1.0.0"
+  }
+}
