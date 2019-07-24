@@ -63,4 +63,27 @@ module.exports = function authController  (){
         res.status(500).send(err);
     })
    }
+
+   this.updateCustomeraddress = (req, res)=>{
+       var data ={
+        address_1:req.body.address1,
+        address_2:req.body.address2
+       }
+       service.updateCustomerAddress(req.auth.id , data).then(data =>{
+        res.status(200).send(data);    
+       }).catch(err =>{
+        res.status(500).send(err);
+    })
+   }
+
+   this.updateCustomercreditCard = (req, res)=>{
+    var data ={
+        credit_card:req.body.creditcard
+    }
+    service.updateCustomercreditCard(req.auth.id , data).then(data =>{
+     res.status(200).send(data);    
+    }).catch(err =>{
+     res.status(500).send(err);
+ })
+}
 }
