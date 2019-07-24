@@ -135,15 +135,48 @@ exports.verifyToken = verifyToken;
 
 exports.updateCustomer = (id, data)=>{
     return new Promise((resolve, reject)=>{
-        console.log(data , '-------------')
         customerRepo.updateByQuery({_id:id}, data).then(updated =>{
             if(updated){
                 customerRepo.getById(updated._id).then(customer =>{
                  resolve({status:200 , message:customer}); 
                 })
+            }else{
+                resolve({status:400 , code:"USER_04" , message:'update failed'})
             }
         }).catch(err =>{
             reject({message:err});
         })
     })
+}
+
+exports.updateCustomerAddress = (id, data)=>{
+    return new Promise((resolve, reject)=>{
+        customerRepo.updateByQuery({_id:id}, data).then(updated =>{
+            if(updated){
+                customerRepo.getById(updated._id).then(customer =>{
+                 resolve({status:200 , message:customer}); 
+                })
+            }else{
+                resolve({status:400 , code:"USER_04" , message:'update failed'})
+            }
+        }).catch(err =>{
+            reject({message:err});
+        })
+    })  
+}
+
+exports.updateCustomercreditCard = (id, data)=>{
+    return new Promise((resolve, reject)=>{
+        customerRepo.updateByQuery({_id:id}, data).then(updated =>{
+            if(updated){
+                customerRepo.getById(updated._id).then(customer =>{
+                 resolve({status:200 , message:customer}); 
+                })
+            }else{
+                resolve({status:400 , code:"USER_04" , message:'update failed'})
+            }
+        }).catch(err =>{
+            reject({message:err});
+        })
+    })  
 }
