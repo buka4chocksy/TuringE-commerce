@@ -9,6 +9,8 @@ module.exports = function(){
     router.post('/login',authCtrl.login )
     router.get('/:id',authCtrl.getCustomer )
     router.put('/', RouteValidator.authenticate , authCtrl.updateCustomer )
+    router.put('/address', RouteValidator.authenticate , authCtrl.updateCustomeraddress )
+    router.put('/creditCard', RouteValidator.authenticate , authCtrl.updateCustomercreditCard )
 
     return router;
 }
